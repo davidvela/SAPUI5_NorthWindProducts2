@@ -33,11 +33,39 @@
 								<Annotation Term="Common.Label" String="{@i18n&gt;TEST_LABEL_}"/>
 								<Annotation Term="Common.Heading" String="{@i18n&gt;appTitle}"/>
 							</PropertyValue>
+							<PropertyValue Property="Description">
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Label" String="Test -- label property"/>
+									<PropertyValue Property="Value" Path="Name"/>
+								</Record>
+							</PropertyValue>
 						</Record>
 						<Record Type="UI.ReferenceFacet">
 							<PropertyValue Property="Label" String="{@i18n&gt;@SecondFacetLabel}"/>
 							<PropertyValue Property="Target" AnnotationPath="Category/@UI.LineItem"/>
 						</Record>
+						
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Test -- label property"/>
+							<PropertyValue Property="Value" Path="Name"/>
+						</Record>
+						
+						<Record Type="UI.HeaderInfo">
+						<PropertyValue Property="TypeName" String="Product"/>
+						<PropertyValue Property="TypeNamePlural" String="Products"/>
+						<PropertyValue Property="ImageUrl" Path="ProductPictureURL"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="to_ProductTextInCurrentLang/Name"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="Product"/>
+							</Record>
+						</PropertyValue>
+						</Record>
+						
 					</Collection>
 				</Annotation>
 			</Annotations>
