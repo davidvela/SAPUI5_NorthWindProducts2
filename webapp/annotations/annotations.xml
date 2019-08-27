@@ -4,48 +4,53 @@
 		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="/V2/OData/OData.svc/$metadata">
-		<edmx:Include Alias="Northwind" Namespace="Northwind"/>
+		<edmx:Include Alias="Metadata" Namespace="ODataDemo"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
 	</edmx:Reference>
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="test.testNorthProducts2.Northwind">
 			<!--===============================================================================
                 Entity Type from chosen collection 
                 ================================================================================-->
+			<!--===============================================================================
+                Entity Type from chosen navigation property
+                ================================================================================-->
 			<Annotations Target="ODataDemo.Product">
 				<Annotation Term="UI.Facets">
 					<Collection>
 						<Record Type="UI.CollectionFacet">
 							<PropertyValue Property="ID" String="GeneralInformation"/>
-							<PropertyValue Property="Label" String="{@i18n>@GeneralInfoFacetLabel}"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
 							<PropertyValue Property="Facets">
 								<Collection>
 									<Record Type="UI.ReferenceFacet">
-										<PropertyValue Property="Label" String="{@i18n>@GeneralInfoFacetLabel}"/>
-										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+										<PropertyValue Property="Label" String="General Information"/>
+										<PropertyValue Property="Target" AnnotationPath="Category/"/>
 									</Record>
 								</Collection>
+								<Annotation Term="Common.Label" String="{@i18n&gt;TEST_LABEL_}"/>
+								<Annotation Term="Common.Heading" String="{@i18n&gt;appTitle}"/>
 							</PropertyValue>
 						</Record>
 						<Record Type="UI.ReferenceFacet">
-							<PropertyValue Property="Label" String="{@i18n>@SecondFacetLabel}"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;@SecondFacetLabel}"/>
 							<PropertyValue Property="Target" AnnotationPath="Category/@UI.LineItem"/>
 						</Record>
 					</Collection>
 				</Annotation>
 			</Annotations>
-			<!--===============================================================================
-                Entity Type from chosen navigation property
-                ================================================================================-->
 			<Annotations Target="ODataDemo.Category">
 				<Annotation Term="UI.Facets">
 					<Collection>
 						<Record Type="UI.CollectionFacet">
 							<PropertyValue Property="ID" String="GeneralInformation"/>
-							<PropertyValue Property="Label" String="{@i18n>@GeneralInfoFacetLabel}"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
 							<PropertyValue Property="Facets">
 								<Collection>
 									<Record Type="UI.ReferenceFacet">
-										<PropertyValue Property="Label" String="{@i18n>@GeneralInfoFacetLabel}"/>
+										<PropertyValue Property="Label" String="{@i18n&gt;@GeneralInfoFacetLabel}"/>
 										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
 									</Record>
 								</Collection>

@@ -20,7 +20,8 @@
 					"odataVersion": "2.0",
 					"annotations": [
 						"localAnnotations_1",
-						"localAnnotations"
+						"localAnnotations",
+						"annotation2_Category"
 					],
 					"localUri": "localService/metadata.xml"
 				}
@@ -37,6 +38,13 @@
 				"type": "ODataAnnotation",
 				"settings": {
 					"localUri": "annotations/annotations.xml"
+				}
+			},
+			"annotation2_Category": {
+				"type": "ODataAnnotation",
+				"uri": "annotation2_Category.xml",
+				"settings": {
+					"localUri": "annotation2_Category.xml"
 				}
 			}
 		},
